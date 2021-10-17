@@ -1,1 +1,5 @@
-.vs
+# Visual Studio data
+.vs/
+
+# Private
+private/
