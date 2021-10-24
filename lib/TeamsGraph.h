@@ -7,6 +7,7 @@ class TeamsGraph {
 public:
 	TeamsGraph();
 private:
+	int temp;
 };
 
 #endif
