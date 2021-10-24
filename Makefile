@@ -1,5 +1,5 @@
-betterteam: src/main.cpp src/nfl-file-reader.cpp
-	g++ -o betterteam -Wall -Werror src/main.cpp src/nfl-file-reader.cpp
+betterteam: src/main.cpp src/NFLFileReader.cpp
+	g++ -o betterteam -Wall -Werror src/main.cpp src/NFLFileReader.cpp
 
 clean:
 	rm betterteam

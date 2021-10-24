@@ -1,4 +1,4 @@
-#include "nfl-file-reader.h"
+#include "NFLFileReader.h"
 #include <iostream>
 #include <sstream>
 #include <vector>
