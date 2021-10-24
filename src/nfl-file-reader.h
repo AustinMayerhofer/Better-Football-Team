@@ -4,12 +4,15 @@
 #include <fstream>
 
 class NFLFileReader {
-private:
-	std::string filePath;
-	const size_t numFieldsPerScoresLine = 14;
 public:
-	NFLFileReader(std::string path);
+	NFLFileReader(std::string teamsPath, std::string scoresPath);
 	void parse();
+private:
+	std::string teamsPath;
+	std::string scoresPath;
+	const size_t numFieldsPerScoresLine = 14;
+	void parseTeams();
+	void parseScores();
 };
 
 #endif
