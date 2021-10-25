@@ -1,18 +1,15 @@
-#ifndef NFLFileReader_H
-#define NFLFileReader_H
+#ifndef NFLFILEREADER_H
+#define NFLFILEREADER_H
 
-#include <fstream>
+#include "../lib/FileReader.h"
 
-class NFLFileReader {
+class NFLFileReader : public FileReader {
 public:
-	NFLFileReader(std::string teamsPath, std::string scoresPath);
-	void parse();
+	NFLFileReader();
+	TeamsGraph getTeamsGraph(std::string teamsPath, std::string scoresPath);
 private:
-	std::string teamsPath;
-	std::string scoresPath;
-	const size_t numFieldsPerScoresLine = 14;
-	void parseTeams();
-	void parseScores();
+	void readTeamsFile(std::string teamsPath, TeamsGraph& g);
+	void readScoresFile(std::string scoresPath, TeamsGraph& g);
 };
 
 #endif

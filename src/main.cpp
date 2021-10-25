@@ -2,7 +2,8 @@
 #include <iostream>
 
 int main() {
-	NFLFileReader myfile("data/NFL/Teams/Teams_2020.csv", "data/NFL/Scores/Scores_2020.csv");
-	myfile.parse();
+	std::cout << "Hello World" << std::endl;
+	NFLFileReader o;
+	o.getTeamsGraph("hello", "world");
 	return 0;
 }

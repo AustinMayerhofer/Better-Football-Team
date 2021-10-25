@@ -1,5 +1,9 @@
 # Visual Studio data
 .vs/
 
+# Binaries
+betterteam
+*.o
+
 # Private
 private/

@@ -1,48 +1,22 @@
 #include "NFLFileReader.h"
 #include <iostream>
-#include <sstream>
-#include <vector>
-#include <assert.h>
 
-NFLFileReader::NFLFileReader(std::string teamsPath, std::string scoresPath) {
-	this->teamsPath = teamsPath;
-	this->scoresPath = scoresPath;
-	std::cout << this->teamsPath << std::endl;
+NFLFileReader::NFLFileReader() {
+
 }
 
-void NFLFileReader::parse() {
-	parseTeams();
-	parseScores();
+TeamsGraph NFLFileReader::getTeamsGraph(std::string teamsPath, std::string scoresPath) {
+	std::cout << "I'm in the teams graph function!" << std::endl;
+	TeamsGraph g;
+	readTeamsFile(teamsPath, g);
+	readScoresFile(scoresPath, g);
+	return g;
 }
 
-void NFLFileReader::parseTeams() {
-	std::ifstream fstream(this->teamsPath);
-	std::string line;
+void NFLFileReader::readTeamsFile(std::string teamsPath, TeamsGraph& g) {
 
-	// read lines
-	while (std::getline(fstream, line)) {
-		std::istringstream sstream(line);
-		std::string field;
-		std::vector<std::string> fields;
-		while (std::getline(sstream, field, ',')) { fields.push_back(field); }
-
-	}
 }
 
-void NFLFileReader::parseScores() {
-	std::ifstream fstream(this->scoresPath);
-	std::string line;
+void NFLFileReader::readScoresFile(std::string scoresPath, TeamsGraph& g) {
 
-	// skip first line
-	std::getline(fstream, line);
-
-	// read other lines
-	while (std::getline(fstream, line)) {
-		std::cout << line << std::endl;
-		std::istringstream sstream(line);
-		std::string field;
-		std::vector<std::string> fields;
-		while (std::getline(sstream, field, ',')) { fields.push_back(field); }
-		assert(fields.size() == this->numFieldsPerScoresLine);
-	}
 }
