@@ -4,14 +4,20 @@ CC = g++
 CFLAGS = -g -Wall -Werror -std=c++11
 OUT = betterteam
 
-all: main.o NFLFileReader.o FileReader.o TeamsGraph.o
-	$(CC) $(CFLAGS) -o $(OUT) main.o NFLFileReader.o FileReader.o TeamsGraph.o
+all: main.o FileReader.o Game.o Team.o TeamNode.o TeamsGraph.o NFLFileReader.o
+	$(CC) $(CFLAGS) -o $(OUT) main.o FileReader.o Game.o Team.o TeamNode.o TeamsGraph.o NFLFileReader.o
 
 main.o: src/main.cpp src/NFLFileReader.h
 	$(CC) $(CFLAGS) -c src/main.cpp
 
 FileReader.o: lib/FileReader.h
 	$(CC) $(CFLAGS) -c lib/FileReader.cpp
+
+Game.o: lib/Game.h
+	$(CC) $(CFLAGS) -c lib/Game.cpp
+
+Team.o: lib/Team.h
+	$(CC) $(CFLAGS) -c lib/Team.cpp
 
 TeamNode.o: lib/TeamNode.h
 	$(CC) $(CFLAGS) -c lib/TeamNode.cpp

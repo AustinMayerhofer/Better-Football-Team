@@ -1,4 +1,4 @@
-# Better Football Team
+# Better Sports Team
 
 ### FileReader class
 - classes will inherit from FileReader like NFLFileReader, NBAFileReader, etc.

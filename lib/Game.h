@@ -1,0 +1,19 @@
+#ifndef GAME_H
+#define GAME_H
+
+#include "Team.h"
+
+class Game {
+private:
+	Team winner;
+	Team loser;
+	int winnerScore;
+	int loserScore;
+public:
+	Team getWinner();
+	Team getLoser();
+	int getWinnerScore();
+	int getLoserScore();
+};
+
+#endif
