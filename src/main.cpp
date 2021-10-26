@@ -2,8 +2,7 @@
 #include <iostream>
 
 int main() {
-	std::cout << "Hello World" << std::endl;
 	NFLFileReader o;
-	o.getTeamsGraph("hello", "world");
+	o.getTeamsGraph("data/NFL/Teams/Teams_2020.csv", "world");
 	return 0;
 }
