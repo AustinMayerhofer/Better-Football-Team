@@ -5,9 +5,9 @@
 
 class NFLFileReader : public FileReader {
 public:
-	NFLFileReader();
 	TeamsGraph getTeamsGraph(std::string teamsPath, std::string scoresPath);
 private:
+	const unsigned int numFieldsPerTeamsLine = 1;
 	void readTeamsFile(std::string teamsPath, TeamsGraph& g);
 	void readScoresFile(std::string scoresPath, TeamsGraph& g);
 };
