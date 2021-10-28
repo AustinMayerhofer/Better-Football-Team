@@ -4,11 +4,12 @@
 #include <string>
 
 class Team {
+public:
+	Team();
+	Team(std::string teamName);
+	const std::string getTeamName();
 private:
 	std::string teamName;
-public:
-	Team(std::string teamName);
-	std::string getTeamName();
 };
 
 #endif

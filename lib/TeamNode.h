@@ -6,6 +6,9 @@
 #include <vector>
 
 class TeamNode {
+public:
+	TeamNode(Team& team);
+	Team getTeam() const;
 private:
 	Team team;
 	std::vector<Game> wins;

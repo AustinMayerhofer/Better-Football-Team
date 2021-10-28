@@ -6,6 +6,7 @@
 
 class TeamsGraph {
 public:
+	void addNode(Team t);
 private:
 	std::map<std::string, TeamNode> teams;
 };
