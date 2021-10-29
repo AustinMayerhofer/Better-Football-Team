@@ -14,7 +14,6 @@ TeamsGraph NFLFileReader::getTeamsGraph(std::string teamsPath, std::string score
 }
 
 void NFLFileReader::readTeamsFile(std::string teamsPath, TeamsGraph& g) {
-	std::cout << "Now I'm here!" << std::endl;
 	std::ifstream fstream(teamsPath);
 	std::string line;
 
@@ -26,8 +25,7 @@ void NFLFileReader::readTeamsFile(std::string teamsPath, TeamsGraph& g) {
 		while (std::getline(sstream, field, ',')) { fields.push_back(field); }
 		assert(fields.size() == this->numFieldsPerTeamsLine);
 		Team team(fields[0]);
-		TeamNode teamNode(team);
-		std::cout << teamNode.getTeam().getTeamName() << std::endl;
+		g.addNode(team);
 	}
 }
 
