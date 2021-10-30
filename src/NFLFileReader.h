@@ -8,6 +8,7 @@ public:
 	TeamsGraph getTeamsGraph(std::string teamsPath, std::string scoresPath);
 private:
 	const unsigned int numFieldsPerTeamsLine = 1;
+	const unsigned int numFieldsPerScoresLine = 14;
 	void readTeamsFile(std::string teamsPath, TeamsGraph& g);
 	void readScoresFile(std::string scoresPath, TeamsGraph& g);
 };

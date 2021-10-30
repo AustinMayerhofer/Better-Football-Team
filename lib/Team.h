@@ -5,10 +5,8 @@
 
 class Team {
 public:
-	Team();
-	Team(std::string teamName);
 	const std::string getTeamName();
-private:
+protected:
 	std::string teamName;
 };
 

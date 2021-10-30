@@ -1,4 +1,5 @@
 #include "NFLFileReader.h"
+#include "NFLTeam.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -24,11 +25,22 @@ void NFLFileReader::readTeamsFile(std::string teamsPath, TeamsGraph& g) {
 		std::vector<std::string> fields;
 		while (std::getline(sstream, field, ',')) { fields.push_back(field); }
 		assert(fields.size() == this->numFieldsPerTeamsLine);
-		Team team(fields[0]);
+		NFLTeam team(fields[0]);
 		g.addNode(team);
 	}
 }
 
 void NFLFileReader::readScoresFile(std::string scoresPath, TeamsGraph& g) {
+	std::ifstream fstream(scoresPath);
+	std::string line;
 
+	// read lines
+	while (std::getline(fstream, line)) {
+		std::istringstream sstream(line);
+		std::string field;
+		std::vector<std::string> fields;
+		while (std::getline(sstream, field, ',')) { fields.push_back(field); }
+		assert(fields.size() == this->numFieldsPerScoresLine);
+		Game game();
+	}
 }
