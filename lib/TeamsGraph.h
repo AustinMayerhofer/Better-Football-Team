@@ -6,6 +6,7 @@
 
 class TeamsGraph {
 public:
+	void addGame(Game g);
 	void addNode(Team t);
 	int getNumTeams();
 private:

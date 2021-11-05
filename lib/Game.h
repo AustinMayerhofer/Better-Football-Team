@@ -4,16 +4,17 @@
 #include "Team.h"
 
 class Game {
-private:
-	Team winner;
-	Team loser;
-	int winnerScore;
-	int loserScore;
 public:
+	Game(Team winner, Team loser, int winnerScore, int loserScore);
 	Team getWinner();
 	Team getLoser();
 	int getWinnerScore();
 	int getLoserScore();
+protected:
+	Team winner;
+	Team loser;
+	int winnerScore;
+	int loserScore;
 };
 
 #endif
