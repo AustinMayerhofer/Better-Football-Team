@@ -5,7 +5,8 @@
 
 class Game {
 public:
-	Game(Team winner, Team loser, int winnerScore, int loserScore);
+	Game(Team winner, Team loser, 
+		int winnerScore, int loserScore);
 	Team getWinner();
 	Team getLoser();
 	int getWinnerScore();

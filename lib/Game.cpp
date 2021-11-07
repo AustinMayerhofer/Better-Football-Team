@@ -1,6 +1,7 @@
 #include "Game.h"
 
-Game::Game(Team winner, Team loser, int winnerScore, int loserScore) {
+Game::Game(Team winner, Team loser, 
+	int winnerScore, int loserScore) {
 	this->winner = winner;
 	this->loser = loser;
 	this->winnerScore = winnerScore;
