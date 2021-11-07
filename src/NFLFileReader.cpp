@@ -6,6 +6,18 @@
 #include <vector>
 #include <assert.h>
 
+NFLFileReader::NFLFileReader(int year) : year(year) {
+	if (year == 2020) {
+		this->numFieldsPerTeamsLine = 1;
+		this->numFieldsPerScoresLine = 14;
+	}
+	else {
+		std::cerr << "NFLFileReader year not recognized, defaulting to 2020" << std::endl;
+		this->numFieldsPerTeamsLine = 1;
+		this->numFieldsPerScoresLine = 14;
+	}
+}
+
 TeamsGraph NFLFileReader::getTeamsGraph(std::string teamsPath, std::string scoresPath) {
 	std::cout << "I'm in the teams graph function!" << std::endl;
 	TeamsGraph g;
