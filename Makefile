@@ -35,4 +35,7 @@ NFLTeam.o: src/NFLTeam.h
 	$(CC) $(CFLAGS) -c src/NFLTeam.cpp
 
 clean:
-	rm $(OUT) *.o
+	- rm $(OUT) 
+	- rm *.o
+
+reset: clean all
