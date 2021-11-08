@@ -1,9 +1,13 @@
 #include "TeamNode.h"
 
+TeamNode::TeamNode() {
+
+}
+
 TeamNode::TeamNode(Team& team) {
 	this->team = team;
 }
 
-Team TeamNode::getTeam() const {
+Team TeamNode::getTeam() {
 	return this->team;
 }

@@ -7,8 +7,9 @@
 
 class TeamNode {
 public:
+	TeamNode();
 	TeamNode(Team& team);
-	Team getTeam() const;
+	Team getTeam();
 private:
 	Team team;
 	std::vector<Game> wins;

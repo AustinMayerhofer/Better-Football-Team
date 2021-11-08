@@ -1,5 +1,6 @@
 #include "NFLFileReader.h"
 #include "NFLTeam.h"
+#include "NFLGame.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -16,14 +17,6 @@ NFLFileReader::NFLFileReader(int year) : year(year) {
 		this->numFieldsPerTeamsLine = 1;
 		this->numFieldsPerScoresLine = 14;
 	}
-}
-
-TeamsGraph NFLFileReader::getTeamsGraph(std::string teamsPath, std::string scoresPath) {
-	std::cout << "I'm in the teams graph function!" << std::endl;
-	TeamsGraph g;
-	readTeamsFile(teamsPath, g);
-	readScoresFile(scoresPath, g);
-	return g;
 }
 
 void NFLFileReader::readTeamsFile(std::string teamsPath, TeamsGraph& g) {
@@ -46,6 +39,9 @@ void NFLFileReader::readScoresFile(std::string scoresPath, TeamsGraph& g) {
 	std::ifstream fstream(scoresPath);
 	std::string line;
 
+	// skip first line
+	std::getline(fstream, line);
+
 	// read lines
 	while (std::getline(fstream, line)) {
 		std::istringstream sstream(line);
@@ -53,6 +49,7 @@ void NFLFileReader::readScoresFile(std::string scoresPath, TeamsGraph& g) {
 		std::vector<std::string> fields;
 		while (std::getline(sstream, field, ',')) { fields.push_back(field); }
 		assert(fields.size() == this->numFieldsPerScoresLine);
-		Game game();
+
+		g.getTeam(fields[4]);
 	}
 }

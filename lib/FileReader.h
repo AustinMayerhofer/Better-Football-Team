@@ -6,7 +6,7 @@
 
 class FileReader {
 public:
-	virtual TeamsGraph getTeamsGraph(std::string teamsPath, std::string scoresPath) = 0;
+	TeamsGraph getTeamsGraph(std::string teamsPath, std::string scoresPath);
 protected:
 	virtual void readTeamsFile(std::string teamsPath, TeamsGraph& g) = 0;
 	virtual void readScoresFile(std::string scoresPath, TeamsGraph& g) = 0;
