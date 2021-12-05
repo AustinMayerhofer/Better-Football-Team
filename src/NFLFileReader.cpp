@@ -30,6 +30,12 @@ void NFLFileReader::readTeamsFile(std::string teamsPath, TeamsGraph& g) {
 		std::vector<std::string> fields;
 		while (std::getline(sstream, field, ',')) { fields.push_back(field); }
 		assert(fields.size() == this->numFieldsPerTeamsLine);
+        if (fields.back().back() == ' ' || fields.back().back() == '\r' || fields.back().back() == '\n' || fields.back().back() == '\t') {
+            fields.back().pop_back();
+        }
+        //std::cout << fields.at(fields.size() - 1).back() << std::endl;
+        //fields.back().erase(fields.back().find_last_not_of(" \n\r\t")+1);
+        //fields.back() = fields.back().substr(0, fields.back().find_last_not_of("\r")+1);
 		NFLTeam team(fields[0]);
 		g.addNode(team);
 	}
@@ -49,7 +55,12 @@ void NFLFileReader::readScoresFile(std::string scoresPath, TeamsGraph& g) {
 		std::vector<std::string> fields;
 		while (std::getline(sstream, field, ',')) { fields.push_back(field); }
 		assert(fields.size() == this->numFieldsPerScoresLine);
+        if (fields.back().back() == ' ' || fields.back().back() == '\r' || fields.back().back() == '\n' || fields.back().back() == '\t') {
+            fields.back().pop_back();
+        }
 
 		g.getTeam(fields[4]);
 	}
+
+    std::cout << year << std::endl;
 }
