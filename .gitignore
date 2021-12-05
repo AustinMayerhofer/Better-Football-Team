@@ -1,5 +1,6 @@
-# Visual Studio data
+# IDE
 .vs/
+.vscode/
 
 # Binaries
 betterteam
